@@ -57,7 +57,7 @@
       navigator.userAgent.match(/AppleWebKit/);
 
     function init() {
-      navigator.geolocation.getCurrentPosition(locationHandler);
+      /*navigator.geolocation.getCurrentPosition(locationHandler);*/
 
       if (!isIOS) {
         window.addEventListener("deviceorientationabsolute", handler, true);
@@ -91,7 +91,7 @@
       
     }
 
-    
+    /*
     let pointDegree;
 
     function locationHandler(position) {
@@ -124,7 +124,7 @@
       return Math.round(psi);
     }
 
-    
+    */
     init();
   </script>
 </html>
