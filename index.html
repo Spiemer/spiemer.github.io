@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    
   }
 
   .compass {
@@ -139,10 +140,10 @@ transform: rotate(90deg);
       needle.style.transform = "rotate(" + (-compass + 45) + "deg)";
       if(compass > 90 && compass < 270){
         kompass.style.background = "url(img/kompass.webp), url(img/strandstuhl.png";
-        document.body.background = "#c2b280";
+        document.body.style.background = "#c2b280";
       } else{
         kompass.style.background = "url(img/kompass.webp), url(img/huette.png";
-        document.body.background = "linear-gradient(blue, white)";
+        document.body.style.background = "white";
       }
 
 
