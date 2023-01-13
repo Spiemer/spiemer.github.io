@@ -65,6 +65,7 @@ function(e){
       compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
       /*compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;*/
       document.getElementById("nadel").style.transform = "rotate(" + (-compass + 45) + "deg)";
+      document.querySelector("#mag").innerHTML = "alpha = " + e.alpha + "<br>" + "beta = " + e.beta + "<br>" + "gamma = " + e.gamma + "<br>" + "compass = " + compass;
 
       // ±15 degree
       if (
