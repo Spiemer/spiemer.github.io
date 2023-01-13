@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Responsive Compass</title>
     <style>
-      body {
-        
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
+      body { 
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
       }
       .centered {
         position: fixed;
@@ -19,7 +18,6 @@
         margin-top: -156px;
         margin-left: -156px;
       }
-
       .nadel {
         width: 313px;
         height: 313px;
@@ -38,7 +36,6 @@
         border-radius: 100%;
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
 			}
-
     </style>
   </head>
   <body>
@@ -46,8 +43,6 @@
       <div class="kompass"></div>
       <div class="nadel"></div>
     </div>
-    
-    
   </body>
   <script>
     const needle = document.querySelector(".nadel");
@@ -57,13 +52,10 @@
       navigator.userAgent.match(/AppleWebKit/);
 
     function init() {
-      /*navigator.geolocation.getCurrentPosition(locationHandler);*/
-
       if (!isIOS) {
         window.addEventListener("deviceorientationabsolute", handler, true);
       }
     }
-
     function startCompass() {
       if (isIOS) {
         DeviceOrientationEvent.requestPermission()
@@ -77,54 +69,18 @@
           .catch(() => alert("not supported"));
       }
     }
-
     function handler(e) {
       compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
       needle.style.transform = "rotate(" + (-compass + 45) + "deg)";
       if(compass > 90 && compass < 270){
         kompass.style.background = "url(img/kompass.webp), url(img/strandstuhl.png";
-        document.body.style.background = "linear-gradient(#5e97fa, #c2b280 45%)";
+        document.body.style.background = "linear-gradient(#5e97fa, #c2b280 60%)";
       } else{
         kompass.style.background = "url(img/kompass.webp), url(img/huette.png";
         document.body.style.background = "linear-gradient(#0C4861, #FBFBEC 45%)";
       }
       
     }
-
-    /*
-    let pointDegree;
-
-    function locationHandler(position) {
-      const { latitude, longitude } = position.coords;
-      pointDegree = calcDegreeToPoint(latitude, longitude);
-
-      if (pointDegree < 0) {
-        pointDegree = pointDegree + 360;
-      }
-    }
-
-    function calcDegreeToPoint(latitude, longitude) {
-      // Qibla geolocation
-      const point = {
-        lat: 21.422487,
-        lng: 39.826206
-      };
-
-      const phiK = (point.lat * Math.PI) / 180.0;
-      const lambdaK = (point.lng * Math.PI) / 180.0;
-      const phi = (latitude * Math.PI) / 180.0;
-      const lambda = (longitude * Math.PI) / 180.0;
-      const psi =
-        (180.0 / Math.PI) *
-        Math.atan2(
-          Math.sin(lambdaK - lambda),
-          Math.cos(phi) * Math.tan(phiK) -
-            Math.sin(phi) * Math.cos(lambdaK - lambda)
-        );
-      return Math.round(psi);
-    }
-
-    */
     init();
   </script>
 </html>
