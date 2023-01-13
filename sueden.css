@@ -26,6 +26,10 @@ div#nadel:hover {
  animation-play-state: paused;
 }
 
+div#start-btn {
+    margin-bottom: auto;
+}
+
 @keyframes Nadel {
  0% {
   transform: rotate(0deg);

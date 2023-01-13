@@ -32,8 +32,8 @@ function(e){
 }
 */
 /*const compassCircle = document.querySelector(".compass-circle");
-    const myPoint = document.querySelector(".my-point");
-    const startBtn = document.querySelector(".start-btn");*/
+    const myPoint = document.querySelector(".my-point");*/
+    const startBtn = document.querySelector(".start-btn");
     const isIOS =
       navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
       navigator.userAgent.match(/AppleWebKit/);
