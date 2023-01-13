@@ -31,8 +31,9 @@ function(e){
     document.getElementById("nadel").style.transform = "rotate(" + (-direction + 45) + "deg)";
 }
 */
-/*const compassCircle = document.querySelector(".compass-circle");
-    const myPoint = document.querySelector(".my-point");*/
+/*const compassCircle = document.querySelector(".compass-circle");*/
+const nadel = document.querySelector("#nadel");
+    const myPoint = document.querySelector(".my-point");
     const startBtn = document.querySelector(".start-btn");
     const isIOS =
       navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
@@ -66,6 +67,7 @@ function(e){
       /*compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;*/
       document.getElementById("nadel").style.transform = "rotate(" + (-compass + 45) + "deg)";
       document.querySelector("#mag").innerHTML = "alpha = " + e.alpha + "<br>" + "beta = " + e.beta + "<br>" + "gamma = " + e.gamma + "<br>" + "compass = " + compass;
+      nadel.style.transform = "rotate(" + (-compass + 45) + "deg)";
 
       // ±15 degree
       if (
