@@ -40,7 +40,7 @@ function(e){
 
     function init() {
       startBtn.addEventListener("click", startCompass);
-      /*navigator.geolocation.getCurrentPosition(locationHandler);*/
+      navigator.geolocation.getCurrentPosition(locationHandler);
 
       if (!isIOS) {
         window.addEventListener("deviceorientationabsolute", handler, true);
