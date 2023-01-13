@@ -44,9 +44,9 @@
     
   </body>
   <script>
-    const compassCircle = document.querySelector(".compass-circle");
+    /*const compassCircle = document.querySelector(".compass-circle");
     const myPoint = document.querySelector(".my-point");
-    const startBtn = document.querySelector(".start-btn");
+    const startBtn = document.querySelector(".start-btn");*/
     const needle = document.querySelector(".nadel");
     const kompass = document.querySelector(".kompass");
     const isIOS =
@@ -54,7 +54,7 @@
       navigator.userAgent.match(/AppleWebKit/);
 
     function init() {
-      startBtn.addEventListener("click", startCompass);
+      /*startBtn.addEventListener("click", startCompass);*/
       navigator.geolocation.getCurrentPosition(locationHandler);
 
       if (!isIOS) {
@@ -78,7 +78,7 @@
 
     function handler(e) {
       compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-      compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
+      /*compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;*/
       needle.style.transform = "rotate(" + (-compass + 45) + "deg)";
       if(compass > 90 && compass < 270){
         kompass.style.background = "url(img/kompass.webp), url(img/strandstuhl.png";
