@@ -13,6 +13,13 @@
       flex-direction: column;
       height: 100vh;
       }
+      .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -156px;
+        margin-left: -156px;
+      }
 
       .nadel {
         width: 313px;
@@ -36,7 +43,7 @@
     </style>
   </head>
   <body>
-    <div>
+    <div class="centered">
       <div class="kompass"></div>
       <div class="nadel"></div>
     </div>
@@ -84,10 +91,10 @@
       needle.style.transform = "rotate(" + (-compass + 45) + "deg)";
       if(compass > 90 && compass < 270){
         kompass.style.background = "url(img/kompass.webp), url(img/strandstuhl.png";
-        document.body.style.background = "linear-gradient(#5e97fa, #c2b280)";
+        document.body.style.background = "linear-gradient(#5e97fa, #c2b280 45%)";
       } else{
         kompass.style.background = "url(img/kompass.webp), url(img/huette.png";
-        document.body.style.background = "linear-gradient(#0C4861, #FBFBEC 30%)";
+        document.body.style.background = "linear-gradient(#0C4861, #FBFBEC 45%)";
       }
       document.querySelector("#mag").innerHTML = "alpha = " + e.alpha + "<br>" + "beta = " + e.beta + "<br>" + "gamma = " + e.gamma + "<br>" + "compass = " + compass + "<br>" + "isIOS = " + isIOS;
     }
