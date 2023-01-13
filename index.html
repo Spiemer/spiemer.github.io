@@ -54,8 +54,19 @@
     function init() {
       if (!isIOS) {
         window.addEventListener("deviceorientationabsolute", handler, true);
+      } else {
+        DeviceOrientationEvent.requestPermission()
+          .then((response) => {
+            if (response === "granted") {
+              window.addEventListener("deviceorientation", handler, true);
+            } else {
+              alert("has to be allowed!");
+            }
+          })
+          .catch(() => alert("not supported"));
       }
     }
+    /*
     function startCompass() {
       if (isIOS) {
         DeviceOrientationEvent.requestPermission()
@@ -69,6 +80,7 @@
           .catch(() => alert("not supported"));
       }
     }
+    */
     function handler(e) {
       compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
       needle.style.transform = "rotate(" + (-compass + 45) + "deg)";
@@ -78,8 +90,7 @@
       } else{
         kompass.style.background = "url(img/kompass.webp), url(img/huette.png";
         document.body.style.background = "linear-gradient(#0C4861, #FBFBEC 45%)";
-      }
-      
+      }   
     }
     init();
   </script>
