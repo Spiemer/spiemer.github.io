@@ -105,6 +105,7 @@ transform: rotate(90deg);
     const myPoint = document.querySelector(".my-point");
     const startBtn = document.querySelector(".start-btn");
     const needle = document.querySelector(".nadel");
+    const kompass = document.querySelector(".kompass");
     const isIOS =
       navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
       navigator.userAgent.match(/AppleWebKit/);
@@ -136,6 +137,9 @@ transform: rotate(90deg);
       compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
       compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
       needle.style.transform = "rotate(" + (-compass + 45) + "deg)";
+      if(compass > 90 && compass < 270){
+        kompass.style.background = "url(img/kompass.webp), url(img/strandstuhl.png";
+      }
 
 
       /*
